@@ -3,13 +3,8 @@
   margin: 0;
   box-sizing: border-box;
 }
-.header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 1rem 0rem;
-}
-.container {
+
+.loadingContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,10 +37,8 @@ h1 {
   grid-template-columns: repeat(3, auto);
   gap: 0.7rem;
   transition: opacity 1s;
-  padding: 20px;
   place-content: center;
-
-  /* opacity: 0; */
+  opacity: 0;
 }
 .title-container {
   grid-area: 1/-1;
@@ -54,7 +47,7 @@ h1 {
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 0.5rem;
 }
 .title {
@@ -64,26 +57,31 @@ h1 {
 .imageContainer {
   box-shadow: 0px 0px 5px 5px black;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .imageContainer img {
   width: 100%;
   object-fit: cover;
-  height: calc(100% - 80px);
+  height: calc(100% - 95px);
 }
 
 .authorContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+
   font-size: 1.5rem;
 }
 
 button {
   border: none;
-  width: fit-content;
-  box-shadow: 0px 0px 4px 5px black;
+  box-shadow: 0px 0px 2px 2px gray;
 
+  width: fit-content;
   font-weight: bolder;
   padding: 8px 12px;
   border-radius: 5px;
@@ -93,8 +91,7 @@ button {
 }
 
 button:hover {
-  color: white;
-  background-color: black;
+  box-shadow: 0px 0px 4px 5px black;
 }
 a {
   text-decoration: none;

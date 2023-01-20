@@ -1,5 +1,8 @@
 import { getImages, handleErrors } from "./helper.js";
+
 const titleContainer = document.querySelector(".title-container");
+const loadingContainer = document.querySelector(".loadingContainer");
+const mainContainer = document.querySelector(".main-container");
 
 const loadImages = async () => {
   try {
@@ -32,11 +35,12 @@ const loadImages = async () => {
       });
     });
     await Promise.all(allPromises);
-
-    console.log(allPromises);
     titleContainer.insertAdjacentHTML("afterend", markup);
+
+    loadingContainer.classList.add("hidden");
+    mainContainer.style.opacity = 1;
   } catch (error) {
     handleErrors(error);
   }
 };
-// loadImages();
+loadImages();

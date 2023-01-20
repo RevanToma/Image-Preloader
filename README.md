@@ -1,6 +1,6 @@
 # Dashboard
 
-[Image Gallery Preloader](https://revantoma.github.io/dashboard/)
+[Image Gallery Preloader](https://revantoma.github.io/Image-Preloader/)
 
 # Description
 
