@@ -1,4 +1,3 @@
-import axios from "axios";
 import { UNSPLASH_URL_BACKGROUND_IMG, unsplashParams } from "./config.js";
 
 export const getImages = () =>
