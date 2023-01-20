@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 1%,
+    rgba(39, 178, 11, 1) 100%,
+    rgba(0, 172, 26, 1) 100%,
+    rgba(41, 186, 10, 1) 100%,
+    rgba(56, 255, 0, 1) 100%
+  );
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: green;
+  text-transform: uppercase;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0.7rem;
+  transition: opacity 1s;
+  padding: 20px;
+  place-content: center;
+
+  /* opacity: 0; */
+}
+.title-container {
+  grid-area: 1/-1;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+.title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.imageContainer {
+  box-shadow: 0px 0px 5px 5px black;
+  height: 100%;
+}
+
+.imageContainer img {
+  width: 100%;
+  object-fit: cover;
+  height: calc(100% - 80px);
+}
+
+.authorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+button {
+  border: none;
+  width: fit-content;
+  box-shadow: 0px 0px 4px 5px black;
+
+  font-weight: bolder;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.fa-spinner {
+  color: green;
+  font-size: 3rem;
+  border-radius: 50%;
+  animation: rotation 0.8s linear infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.hidden {
+  display: none;
+}
