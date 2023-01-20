@@ -44,3 +44,32 @@ const loadImages = async () => {
   }
 };
 loadImages();
+const overlay = document.querySelector(".overlay");
+
+mainContainer.addEventListener("click", (e) => {
+  const img = e.target.closest("img");
+
+  if (!img) return;
+
+  renderModal(img, mainContainer);
+  displayModal();
+
+  // const modal = document.getElementById("myModal");
+  // modal.style.display = "block";
+
+  if (e.target.classList.contains(".modal")) modal.style.display = "none";
+});
+function displayModal() {
+  const modal = document.querySelector("#myModal");
+  modal.style.display = "block";
+}
+function renderModal(img, parent) {
+  let markup = `
+  <div id="myModal" class="modal">   
+      <span class="close">&times;</span>     
+      <img src="${img.src}" class="modal-content">   
+    <div id="caption">${img.alt_description}</div>
+</div>   
+  `;
+  parent.insertAdjacentHTML("beforeend", markup);
+}
