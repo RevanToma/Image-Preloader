@@ -3,7 +3,7 @@ import { UNSPLASH_URL_BACKGROUND_IMG, unsplashParams } from "./config.js";
 export const getImages = () =>
   axios.get(UNSPLASH_URL_BACKGROUND_IMG, unsplashParams);
 
-const handleErrors = (error) => {
+export const handleErrors = (error) => {
   if (error.response) {
     console.log(
       `Your request was made but the server responded with a failed status code! (${error.response.status})`
