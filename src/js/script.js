@@ -10,9 +10,7 @@ const titleContainer = document.querySelector(".title-container");
 const loadingContainer = document.querySelector(".loadingContainer");
 const mainContainer = document.querySelector(".main-container");
 
-if (module.hot) {
-  module.hot.accept();
-}
+
 const loadImages = async () => {
   try {
     const { data } = await getImages();
