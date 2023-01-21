@@ -5,11 +5,7 @@ import {
   renderModal,
   closeModal,
 } from "./helper.js";
-
-const titleContainer = document.querySelector(".title-container");
-const loadingContainer = document.querySelector(".loadingContainer");
-const mainContainer = document.querySelector(".main-container");
-
+import { titleContainer, loadingContainer, mainContainer } from "./config.js";
 
 const loadImages = async () => {
   try {

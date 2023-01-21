@@ -30,7 +30,7 @@ h1 {
 }
 
 .main-container {
-  width: 100vw;
+  width: 99vw;
   height: 100%;
   min-height: 100vh;
   display: grid;
@@ -38,6 +38,15 @@ h1 {
   gap: 0.7rem;
   transition: opacity 1s;
   place-content: center;
+  padding: 1rem;
+
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+
   opacity: 0;
 }
 .title-container {
@@ -92,6 +101,7 @@ button {
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.4s;
+  background-color: transparent;
 }
 
 button:hover {
@@ -195,17 +205,17 @@ a {
 /* The Close Button */
 .close {
   position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
+  bottom: 35%;
+  right: 50%;
+  color: whitesmoke;
+  font-size: 3rem;
   font-weight: bold;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
 .close:hover,
 .close:focus {
-  color: #bbb;
+  color: gray;
   text-decoration: none;
   cursor: pointer;
 }

@@ -11,3 +11,6 @@ export const unsplashParams = {
     Authorization: "Client-ID MZE_fLZL0Zvz6J0aBV53gezMWFSJNHQ_4EpheW8KSF8",
   },
 };
+export const titleContainer = document.querySelector(".title-container");
+export const loadingContainer = document.querySelector(".loadingContainer");
+export const mainContainer = document.querySelector(".main-container");
