@@ -1,9 +1,18 @@
-import { getImages, handleErrors } from "./helper.js";
+import {
+  getImages,
+  handleErrors,
+  displayModal,
+  renderModal,
+  closeModal,
+} from "./helper.js";
 
 const titleContainer = document.querySelector(".title-container");
 const loadingContainer = document.querySelector(".loadingContainer");
 const mainContainer = document.querySelector(".main-container");
 
+if (module.hot) {
+  module.hot.accept();
+}
 const loadImages = async () => {
   try {
     const { data } = await getImages();
@@ -12,7 +21,7 @@ const loadImages = async () => {
 
     const allPromises = await data.map((img) => {
       return new Promise((resolve, reject) => {
-        const url = img.urls.small;
+        const url = img.urls.regular;
         const authorLink = img.user.links.html;
         const { alt_description: alt } = img;
         const { name } = img.user;
@@ -44,32 +53,17 @@ const loadImages = async () => {
   }
 };
 loadImages();
-const overlay = document.querySelector(".overlay");
 
 mainContainer.addEventListener("click", (e) => {
   const img = e.target.closest("img");
-
   if (!img) return;
 
+  // render the modal markup
   renderModal(img, mainContainer);
+
+  //display the modal
   displayModal();
 
-  // const modal = document.getElementById("myModal");
-  // modal.style.display = "block";
-
-  if (e.target.classList.contains(".modal")) modal.style.display = "none";
+  // close modal when X is clicked
+  closeModal();
 });
-function displayModal() {
-  const modal = document.querySelector("#myModal");
-  modal.style.display = "block";
-}
-function renderModal(img, parent) {
-  let markup = `
-  <div id="myModal" class="modal">   
-      <span class="close">&times;</span>     
-      <img src="${img.src}" class="modal-content">   
-    <div id="caption">${img.alt_description}</div>
-</div>   
-  `;
-  parent.insertAdjacentHTML("beforeend", markup);
-}

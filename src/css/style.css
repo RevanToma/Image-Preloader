@@ -66,6 +66,7 @@ h1 {
   width: 100%;
   object-fit: cover;
   height: calc(100% - 95px);
+  cursor: pointer;
 }
 
 .authorContainer {
@@ -75,6 +76,9 @@ h1 {
   align-items: center;
 
   font-size: 1.5rem;
+}
+.author:hover {
+  font-size: 1.65rem;
 }
 
 button {

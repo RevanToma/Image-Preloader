@@ -16,3 +16,27 @@ export const handleErrors = (error) => {
     );
   }
 };
+
+export function displayModal() {
+  const modal = document.querySelector("#myModal");
+  modal.style.display = "block";
+}
+export function closeModal() {
+  const modal = document.querySelector("#myModal");
+  modal.addEventListener("click", (e) => {
+    const close = e.target.closest(".close");
+
+    if (!close) return;
+    if (close) modal.style.display = "none";
+  });
+}
+
+export function renderModal(img, parent) {
+  let markup = `
+  <div id="myModal" class="modal">   
+      <span class="close">&times;</span>     
+      <img src="${img.src}" class="modal-content">
+</div>   
+  `;
+  parent.insertAdjacentHTML("beforeend", markup);
+}
