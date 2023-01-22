@@ -225,9 +225,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  pointer-events: none;
 }
-.popup-container {
+.imgContainer img {
   pointer-events: none;
 }
 
