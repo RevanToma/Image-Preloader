@@ -5,7 +5,12 @@ import {
   renderModal,
   closeModal,
 } from "./helper.js";
-import { titleContainer, loadingContainer, mainContainer } from "./config.js";
+import {
+  titleContainer,
+  loadingContainer,
+  mainContainer,
+  popupContainer,
+} from "./config.js";
 
 const loadImages = async () => {
   try {
@@ -49,15 +54,16 @@ const loadImages = async () => {
 loadImages();
 
 mainContainer.addEventListener("click", (e) => {
-  const img = e.target.closest("img");
-  if (!img) return;
+  let imgs = e.target.closest("img");
 
-  // render the modal markup
-  renderModal(img, mainContainer);
+  if (!imgs) return;
 
-  //display the modal
+  // render modal
+  renderModal(imgs, popupContainer);
+
+  // display the modal
   displayModal();
 
-  // close modal when X is clicked
+  // close modal on X
   closeModal();
 });

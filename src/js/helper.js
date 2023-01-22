@@ -23,20 +23,22 @@ export function displayModal() {
 }
 export function closeModal() {
   const modal = document.querySelector("#myModal");
-  modal.addEventListener("click", (e) => {
-    const close = e.target.closest(".close");
+  const close = document.querySelector(".close");
 
-    if (!close) return;
-    if (close) modal.style.display = "none";
+  close.addEventListener("click", () => {
+    modal.style.display = "none";
   });
 }
 
 export function renderModal(img, parent) {
   let markup = `
   <div id="myModal" class="modal">   
-      <span class="close">&times;</span>     
-      <img src="${img.src}" class="modal-content">
+   <div class="imgContainer">
+    <img src="${img.src}" class="modal-content">
+     <p id="caption">${img.alt}</p>
+   <span class="close">&times;</span>     
+      </div>
 </div>   
   `;
-  parent.insertAdjacentHTML("beforeend", markup);
+  parent.insertAdjacentHTML("afterend", markup);
 }

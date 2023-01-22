@@ -14,3 +14,4 @@ export const unsplashParams = {
 export const titleContainer = document.querySelector(".title-container");
 export const loadingContainer = document.querySelector(".loadingContainer");
 export const mainContainer = document.querySelector(".main-container");
+export const popupContainer = document.querySelector(".popup-container");
